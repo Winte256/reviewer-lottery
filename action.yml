@@ -1,6 +1,6 @@
-name: 'Reviewer lottery'
+name: 'Fork of reviewer lottery'
 description: 'Automatically assign reviewers to Pull Requests'
-author: 'Unai Esteibar'
+author: 'Mikhail Krutikhin'
 branding:
   icon: 'eye'
   color: 'orange'
