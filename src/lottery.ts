@@ -66,10 +66,14 @@ class Lottery {
     const ownerAndRepo = this.getOwnerAndRepo()
     const pr = this.getPRNumber()
 
+    const resultOfReviewers = reviewers.filter((r: string | undefined) => !!r)
+
+    core.setOutput('selectedReviewer', resultOfReviewers[0])
+
     return this.octokit.pulls.requestReviewers({
       ...ownerAndRepo,
       pull_number: pr, // eslint-disable-line @typescript-eslint/camelcase
-      reviewers: reviewers.filter((r: string | undefined) => !!r)
+      reviewers: resultOfReviewers
     })
   }
 
